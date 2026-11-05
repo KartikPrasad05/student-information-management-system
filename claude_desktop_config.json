@@ -1,0 +1,45 @@
+{
+  "mcpServers": {
+    "campusdesk-unified": {
+      "command": "node",
+      "args": [
+        "D:\\AgriNet\\AWS\\P1\\P1\\mcp\\server.js"
+      ],
+      "env": {
+        "VERCEL_TOKEN": "YOUR_VERCEL_TOKEN",
+        "RENDER_API_KEY": "YOUR_RENDER_API_KEY",
+        "MONGODB_URI": "YOUR_MONGODB_URI"
+      }
+    },
+    "vercel": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-vercel"
+      ],
+      "env": {
+        "VERCEL_API_TOKEN": "YOUR_VERCEL_TOKEN"
+      }
+    },
+    "render": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "render-mcp-server"
+      ],
+      "env": {
+        "RENDER_API_KEY": "YOUR_RENDER_API_KEY"
+      }
+    },
+    "mongodb": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mongodb-mcp-server"
+      ],
+      "env": {
+        "MDB_MCP_CONNECTION_STRING": "YOUR_MONGODB_URI"
+      }
+    }
+  }
+}

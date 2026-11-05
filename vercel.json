@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build --workspace=frontend",
+  "outputDirectory": "frontend/dist",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://student-information-management-system-7zv9.onrender.com/api/:path*"
+    },
+    {
+      "source": "/health",
+      "destination": "https://student-information-management-system-7zv9.onrender.com/health"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

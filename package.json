@@ -1,0 +1,26 @@
+{
+  "name": "campus-student-information-system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev --workspace=backend\" \"npm:dev --workspace=frontend\"",
+    "build": "npm run build --workspace=frontend",
+    "start": "npm run start --workspace=backend",
+    "deploy": "node deploy-now.js",
+    "deploy:all": "node unified-deploy.js",
+    "spawn:render": "node render-spawn.js",
+    "sync:replica": "node sync-and-deploy-replica.js",
+    "sync:cors": "node update-render-cors.js",
+    "fix:render": "node fix-render-replica.js",
+    "fix:all": "node auto-fix-all-replicas.js",
+    "mcp:server": "node mcp/server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
